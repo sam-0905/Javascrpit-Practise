@@ -14,7 +14,7 @@ function findSum(arr){
 console.log(findSum(arr));
 
 //Reduce
-const output = arr.reduce(((acc,cur) => acc = cur + acc ),0)
+const output = arr.reduce(((acc,cur) => acc = cur + acc),0)
 
 console.log("From Reduce",output);
 
@@ -39,7 +39,7 @@ const output2 = arr2.reduce(((acc,cur) => cur> acc ? acc = cur : acc),0);
 console.log("From Reduce 2",output2)
 
 
-//Reduce
+//Reduce - {26: 2, 50: 1, 75: 1}
 const users = [
     {firstName: 'Akshay', lastName: 'saini',age: 26},
     {firstName: 'donald',lastName: 'trumph',age: 75},
@@ -47,4 +47,28 @@ const users = [
     {firstName: 'deepika',lastName: 'padukone',age: 26},
   ];
 
-  
+const output3 = users.reduce(function(acc,cur){
+    if(acc[cur.age]){
+        acc[cur.age] = ++acc[cur.age]
+    }
+    else{
+        acc[cur.age] = 1
+    }
+    return acc;
+},{})
+
+console.log(output3)
+
+
+const output4 = users.filter((x) => x.age < 30).map((x) => x.firstName)
+
+console.log(output4)
+
+const output5 = users.reduce((acc,cur) => {
+    if(cur.age < 30){
+        acc.push(cur.firstName)
+    }
+    return acc;
+},[])
+
+console.log(output5)
