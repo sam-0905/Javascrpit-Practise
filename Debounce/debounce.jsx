@@ -41,7 +41,7 @@ searchInput.addEventListener('input', debouncedSearch);
 
 
 // Example 3 
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 function useDebounce(value, delay = 300) {
   const [debouncedValue, setDebouncedValue] = useState(value);
