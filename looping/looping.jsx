@@ -4,8 +4,15 @@ let arr = [3,2,6,2,1,1,4,4]
 function multiplyByN(nums,n){
   return nums.map((num) => num * n)
 }
-
 console.log("From example 1",multiplyByN(arr,2))
+let arr3 = [20,40,60,80];
+
+//NOTE: For of loop is recommended for arrays
+// For in loop is recommended for objects
+for(const num of arr3){
+// console.log("i", num, "element", arr3[num])
+// return num*N
+}
 
 // Example 2
 function multiplyByN2(arr,num){
@@ -88,8 +95,22 @@ console.log("From example 6 ", ReverseArr(arr))
 console.log("Appu")
 
 // For Arrays, you can also use for in loop
-const arr2 = [100, 200, 300, 400];
+// const arr2 = [100, 200, 300, 400];
 
-for(const num in arr2) {
-    console.log('Index', num, 'elem', arr2);
+// for(const num in arr2) {
+//     console.log('Index', num, 'elem', arr2);
+// }
+
+const userObj = {
+    name: "Appu",
+    age: 24,
+    location: 'Trichy'
 }
+
+function logTheKeysOfAnObj(obj) {
+    for(const key in obj) {
+        console.log('Key', key, 'value', obj[key])
+    }
+}
+
+logTheKeysOfAnObj(userObj)
