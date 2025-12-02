@@ -1,3 +1,4 @@
+// ft. Akshay saini
 let counter = 0;
 
 function getData(){
@@ -37,8 +38,12 @@ const debouncedSearch = debounce((e) => {
   console.log('Search for:', e.target.value);
 }, 400);
 
-searchInput.addEventListener('input', debouncedSearch);
+// searchInput.addEventListener('input', debouncedSearch);
 
+
+// ------------------------------------------
+
+// chatgpt
 
 // Example 3 
 // import { useState, useEffect } from 'react';
@@ -67,3 +72,44 @@ function Search() {
 
   return <input value={query} onChange={e => setQuery(e.target.value)} />;
 }
+
+// ---------------------------------------------------------------------
+// ft. RoadsideCoder examples
+/*
+/Q1 - Create a button UI and debounce as follows
+     - show "Button pressed <x> times" 
+     - Increase "Triggerd <Y> times" count after 800ms of debounce
+ */
+
+
+const btn = document.querySelector(".Inc-btn");
+const btnPress = document.querySelector(".Inc-pressed");
+const count = document.querySelector(".Inc-count");
+
+let pressedCount = 0;
+let TriggerCount = 0;
+
+const myDebounce = (func,limit) =>{
+  let timer;
+  return function(){
+    let context = this,
+        args = arguments
+    clearTimeout(timer)
+    timer = setTimeout(()=>{
+      func.apply(context,args)
+    },limit)
+  }
+}
+
+const debounceCount = myDebounce(()=>{
+    count.innerHTML = ++TriggerCount; 
+},800)
+
+
+function onClickHandlerBtn(){
+  btnPress.innerHTML = ++pressedCount;
+  debounceCount();
+  console.log("btn clicked...")
+}
+
+btn.addEventListener("click",onClickHandlerBtn )
