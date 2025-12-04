@@ -1,3 +1,5 @@
+// ft. Akshay saini
+
 const loggerFunc = () => {
   console.count("Throttled Function");
 }
@@ -29,3 +31,6 @@ const normalFunc = () => {
 
 window.addEventListener("resize",normalFunc);
 
+
+
+// ft. Roadside cooder
