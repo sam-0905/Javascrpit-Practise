@@ -126,7 +126,7 @@ console.log(
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-
+// Array.reverse e.g.
 const items = [1, 2, 3];
 console.log(items); // Output: [1, 2, 3]
 
