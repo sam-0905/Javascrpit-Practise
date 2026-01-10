@@ -115,3 +115,20 @@ console.log(
     .map(i => (i % 3 === 0 ? "fizz" : "") + (i % 5 === 0 ? "buzz" : "") || i)
     .join("\n")
 );
+
+
+
+// Problem 3 - Reverse string
+// Given a string, return a new string with the reversed
+// order of characters
+// --- Examples
+//   reverse('apple') === 'leppa'
+//   reverse('hello') === 'olleh'
+//   reverse('Greetings!') === '!sgniteerG'
+
+
+const items = [1, 2, 3];
+console.log(items); // Output: [1, 2, 3]
+
+items.reverse();
+console.log(items); // Output: [3, 2, 1]
