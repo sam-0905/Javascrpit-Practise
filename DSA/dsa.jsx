@@ -132,3 +132,37 @@ console.log(items); // Output: [1, 2, 3]
 
 items.reverse();
 console.log(items); // Output: [3, 2, 1]
+
+
+
+// Approach 1 -
+// 1 - my try
+function revStr(str){
+    for(let i=0 ;i<str.length-1; i++){
+  let result = ""
+  result.push(str);
+return result;
+}
+}
+
+// 1 - my try - fixed version
+
+function revStr(str){
+
+  let result = "";
+
+  for(let i= str.length - 1; i >=0; i--){
+    result = result + str[i] // result += str[i]
+  }
+  return result;
+}
+
+console.log(revStr("apple"))
+
+
+// Approach 2 --
+
+function reverseStr(str1){
+  return str1.split().reverse().join("")
+}
+
