@@ -165,4 +165,4 @@ console.log(revStr("apple"))
 function reverseStr(str1){
   return str1.split().reverse().join("")
 }
-
+console.log(reverseStr("apple"))
