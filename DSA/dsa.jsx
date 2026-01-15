@@ -161,8 +161,19 @@ console.log(revStr("apple"))
 
 
 // Approach 2 --
-
+// V1
 function reverseStr(str1){
   return str1.split().reverse().join("")
 }
 console.log(reverseStr("apple"))
+
+// V2
+function reverseStr2(str2){
+  let result1 = ""
+
+  for (let character of str2 ){
+    result1 = character + result1 
+  }
+  return result1;
+}
+console.log(reverseStr2("orange"))
