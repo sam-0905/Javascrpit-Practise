@@ -177,3 +177,8 @@ function reverseStr2(str2){
   return result1;
 }
 console.log(reverseStr2("orange"))
+
+// V3
+function reverse(str){
+  return str.split("").reduce((rev,char)=> char + rev , "")
+}
