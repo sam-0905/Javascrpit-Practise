@@ -211,3 +211,24 @@ function isPalindrome(str){
     return false
   }
 }
+isPalindrome("abba")
+
+
+// my version - [Approach 2]
+
+function isPalindrome2(str){
+  const reversedStr = str.split("").reverse().join("")
+  if(reversedStr === str){
+    return true
+  }
+  return false
+}
+
+// my version - [Approach 2.1]
+
+function isPalindrome3(str){
+  const reversedStr2 = str.split("").reverse().join("")
+  
+  return str === reversedStr2
+}
+
