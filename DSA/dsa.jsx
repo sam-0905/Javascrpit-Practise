@@ -232,3 +232,13 @@ function isPalindrome3(str){
   return str === reversedStr2
 }
 
+// my version - [Approach 3]
+
+function isPalindrome4(str){
+// Here we are going to use a array method for that we first want to convert a str to arr so we use split()
+
+  return str.split("").every((char,i)=>{
+  return  char === str[str.length - i - 1]
+})
+
+}
