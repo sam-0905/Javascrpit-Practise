@@ -242,3 +242,24 @@ function isPalindrome4(str){
 })
 
 }
+
+
+// Question - 5
+// reverseInt
+
+/*
+Given an integer, return an integer that is the reverse
+ordering of numbers.
+--- Examples
+  reverseInt(15) === 51
+  reverseInt(981) === 189
+-- We should take care of 00  and neagtive values -91
+  reverseInt(500) === 5
+  reverseInt(-15) === -51
+  reverseInt(-90) === -9
+*/ 
+
+
+function reverseInt(num){
+  return num.split().reverse()
+}
