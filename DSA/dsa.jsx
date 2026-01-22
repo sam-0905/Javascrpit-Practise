@@ -1,3 +1,5 @@
+const { version } = require("react");
+
 // Fibonacci sequence  
 const fibSeries = [0, 1, 1, 2, 3, 5, 8 ]
 
@@ -199,3 +201,13 @@ and punctuation in determining if the string is a palindrome
 // --- Examples:
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
+
+// my version
+function isPalindrome(str){
+  if(  str.split("").reverse().join("") === str){
+    return true
+  }
+  else  {
+    return false
+  }
+}
