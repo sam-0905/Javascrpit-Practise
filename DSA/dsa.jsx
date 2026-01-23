@@ -264,3 +264,10 @@ function reverseInt(num){
     const reveredNum = num.toString().split("").reverse().join("")
     return parseInt(reveredNum);
 }
+
+//without parserInt - it returns as a string.Not a value
+function reverseInt2(num){
+    const reveredNum = num.toString().split("").reverse().join("")
+    return reveredNum;
+  }
+
