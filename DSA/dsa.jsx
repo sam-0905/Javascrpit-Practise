@@ -271,3 +271,25 @@ function reverseInt2(num){
     return reveredNum;
   }
 
+/*
+--- so for both the above method fails incase of negative values.For that we should also use.
+ ParseInt() + Math.sign() method to solve.
+**/
+// Final solution 1:
+function reverseInt3(num){
+    const reveredNum = num.toString().split("").reverse().join("")
+    if(num < 0 ){
+      return parseInt(reveredNum) * -1;
+    }
+    return parseInt(reveredNum);
+  }
+
+// Final solution 2:
+
+function reverseInt3(num){
+    const reveredNum = num.toString().split("").reverse().join("")
+      return parseInt(reveredNum) * Math.sign(num)
+  }
+
+
+
