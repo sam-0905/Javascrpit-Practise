@@ -259,7 +259,8 @@ ordering of numbers.
   reverseInt(-90) === -9
 */ 
 
-
+// my version 
 function reverseInt(num){
-  return num.split().reverse()
+    const reveredNum = num.toString().split("").reverse().join("")
+    return parseInt(reveredNum);
 }
