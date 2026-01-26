@@ -316,4 +316,13 @@ for(let char of string){
   }
 }
 
+// Approach 1.1
+const string1 = "Hello there!";
+const chars2 = {};
+
+for(let char of string){
+  //  chars2[char] = chars2[char] + 1 - If we write like this it will not assign 1 instead null/nan.
+  chars2[char] = chars2[char] + 1 || 1; //so we give OR 1 for safety. 
+}
+
  
