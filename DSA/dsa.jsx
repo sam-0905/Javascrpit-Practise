@@ -303,3 +303,17 @@ commonly used in the string.
 maxChar("abcccccccd") === "c"
 maxChar("apple 1231111") === "1"
 **/ 
+
+// Approach 1
+const string = "Hello there!";
+const chars = {};
+
+for(let char of string){
+  if(!chars[char]){
+    chars[char] = 1
+  }else{
+    chars[char]++
+  }
+}
+
+ 
