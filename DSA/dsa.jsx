@@ -1,4 +1,3 @@
-const { version } = require("react");
 
 // Fibonacci sequence  
 const fibSeries = [0, 1, 1, 2, 3, 5, 8 ]
