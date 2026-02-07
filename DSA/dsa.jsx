@@ -1,4 +1,3 @@
-
 // Fibonacci sequence  
 const fibSeries = [0, 1, 1, 2, 3, 5, 8 ]
 
@@ -164,7 +163,7 @@ console.log(revStr("apple"))
 // Approach 2 --
 // V1
 function reverseStr(str1){
-  return str1.split().reverse().join("")
+  return str1.split("").reverse().join("")
 }
 console.log(reverseStr("apple"))
 
