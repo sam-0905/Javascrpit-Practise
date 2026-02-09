@@ -61,6 +61,7 @@ console.log(fib(3))
     for( let i = 1; i<=n; i++){
 
         console.log("first")
+        
          if(i % 3 === 0  && n % 5 === 0){
             return "fizzbuzz";
        }    else if (i % 3 === 0){
@@ -139,7 +140,7 @@ console.log(items); // Output: [3, 2, 1]
 // 1 - my try
 function revStr(str){
     for(let i=0 ;i<str.length-1; i++){
-  let result = ""
+  let result = "" 
   result.push(str);
 return result;
 }
@@ -202,7 +203,7 @@ and punctuation in determining if the string is a palindrome
 
 // my version
 function isPalindrome(str){
-  if(  str.split("").reverse().join("") === str){
+  if(str.split("").reverse().join("") === str){
     return true
   }
   else  {
@@ -288,7 +289,6 @@ function reverseInt3(num){
     const reveredNum = num.toString().split("").reverse().join("")
       return parseInt(reveredNum) * Math.sign(num)
   }
-
 
 
 // Question - 6
