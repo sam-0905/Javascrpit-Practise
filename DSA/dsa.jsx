@@ -217,7 +217,7 @@ isPalindrome("abba")
 
 function isPalindrome2(str){
   const reversedStr = str.split("").reverse().join("")
-  if(reversedStr === str){
+  if(str === reversedStr){
     return true
   }
   return false
