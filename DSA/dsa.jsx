@@ -303,6 +303,7 @@ maxChar("apple 1231111") === "1"
 **/ 
 
 // Approach 1
+// Frequency Map (or Character Map)
 const string = "Hello there!";
 const chars = {};
 
@@ -315,6 +316,7 @@ for(let char of string){
 }
 
 // Approach 1.1
+// Character Map
 const string1 = "Hello there!";
 const chars2 = {};
 
