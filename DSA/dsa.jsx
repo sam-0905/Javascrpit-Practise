@@ -326,7 +326,7 @@ for(let char of string){
 }
 
  
-/* MaxChar solution
+/* 1.a) MaxChar solution
   The Goal: Find the character that appears most frequently.
 */ 
 
