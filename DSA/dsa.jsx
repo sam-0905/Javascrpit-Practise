@@ -347,3 +347,27 @@ function maxChar(str){
   }
  return maxChar;
 }
+
+
+/*
+First Non-Repeating Character
+The Goal: Find the first character that does not repeat anywhere else in the string.
+*/ 
+
+function firstNonRepeating(str){
+  const charMap = {}
+
+  for(let char of str){
+    charMap[char] = charMap[char] + 1 || 1 
+  }
+  
+  for(let char of str){
+    if(charMap[char] = 1){
+      return char
+    }
+  }
+
+  return null
+}
+
+
