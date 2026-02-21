@@ -370,4 +370,68 @@ function firstNonRepeating(str){
   return null
 }
 
+// Unique Characters
+// The Goal: Determine if every character in the string appears only once.
 
+function hasUniqueChars(str){
+
+  const charSet = new Set();
+
+  for(let char of str){
+    if(charSet.has(char)) return false;
+    else {
+      charSet.add(char)
+    }
+    return true
+  }
+
+}
+
+// Question - 6
+// array and chunk
+
+/*
+--- Directions
+Given an array and chunk size, divide the array into many subarrays
+where each subarray is of length size
+--- Examples
+chunk([1, 2, 3, 4], 2) --> [[ 1, 2], [3, 4]]
+chunk([1, 2, 3, 4, 5], 2) --> [[ 1, 2], [3, 4], [5]]
+chunk([1, 2, 3, 4, 5, 6, 7, 8], 3) --> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
+chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
+chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
+
+*/
+
+// My try
+function chunk(array,size){
+  let newArr = []
+  if(size){
+    array.length % 2 
+    return newArr.push(array)
+  }else{
+    array.length % 2 != 0
+    return newArr.push(array)
+  }
+  return newArr;
+}
+
+// Solution 1
+
+function chunk2(array,size){
+
+  const chunked = []
+
+  for(let ele of array){
+
+    const last = chunked[chunked.length-1]
+
+    if(!last || last.length === size){
+      chunked.push([ele])
+    }
+    else{
+    last.push(ele)
+    }
+  }
+  return chunked;
+}
