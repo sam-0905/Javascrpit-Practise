@@ -387,7 +387,7 @@ function hasUniqueChars(str){
 
 }
 
-// Question - 6
+// Question - 7
 // array and chunk
 
 /*
@@ -456,4 +456,19 @@ function chunk(array, size) {
   }
 
   return result;
+}
+
+
+// Final solution 
+
+function chunk1(arr,size){
+
+  const chunked = [];
+  let index = 0;
+
+  while(index < arr.length){
+    chunked.push( arr.slice(index , index + size))
+    index += size
+  }
+return chunked;
 }
