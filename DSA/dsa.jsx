@@ -518,3 +518,19 @@ function isAnagram(strA,strB){
   }
       return true;
 }
+
+// Anagram 8.2
+
+function checkIfStrIsAnagram(strA,strB){
+  console.log(strA)
+  console.log(strB)
+ return cleanStr(strA)  === cleanStr(strB)
+ }
+
+function cleanStr(str){
+  const sortedStr =  str.replace(/[\W_]/g, '').toLowerCase().split("").sort().join('')
+  return sortedStr;
+  console.log(sortedStr)
+}
+
+
