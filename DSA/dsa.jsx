@@ -515,7 +515,6 @@ function isAnagram(strA,strB){
     if(aCharMap[char] != bCharMap[char]){
       return false
     }
-    return true
   }
-
+      return true;
 }
