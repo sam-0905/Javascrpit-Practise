@@ -487,3 +487,35 @@ return chunked;
 //   anagrams('rail safety', 'fairy tales') --> True
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
+
+
+
+// Helper function 
+
+function buildCharMap(str){
+  const charMap = {}
+
+  for(let char of str.replace(/[\W_]/g, '').toLowerCase()){
+    charMap[char] = charMap[char] + 1 || 1
+   }
+   return charMap;
+}
+
+
+// Anagram 
+
+function isAnagram(strA,strB){
+
+  const aCharMap = buildCharMap(strA);
+  const bCharMap = buildCharMap(strB);
+
+  if(Object.keys(aCharMap).length != Object.keys(bCharMap).length) return false ;
+
+  for(let char in aCharMap){
+    if(aCharMap[char] != bCharMap[char]){
+      return false
+    }
+    return true
+  }
+
+}
