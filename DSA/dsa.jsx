@@ -534,3 +534,34 @@ function cleanStr(str){
 }
 
 
+
+// Question - 8
+
+
+/* // --- Directions
+Write a function that accepts a string.  The function should
+capitalize the first letter of each word in the string then
+return the capitalized string.
+--- Examples
+  capitalize('a short sentence') --> 'A Short Sentence'
+  capitalize('a lazy fox') --> 'A Lazy Fox'
+  capitalize('look, it is working!') --> 'Look, It Is Working!'***/ 
+
+// My version
+
+function capitalize(str) {
+  
+ const newSentence = []
+ 
+const capitalizeLetter =  str[0].toUpperCase()
+
+console.log("Form console",capitalizeLetter)
+  
+newSentence.push(capitalizeLetter + str.split("").slice(1).join(""))
+ 
+  // console.log("From console", newSentence)
+ 
+return newSentence;
+}
+
+capitalize('a short sentence')
