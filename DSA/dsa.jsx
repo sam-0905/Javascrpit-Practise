@@ -623,7 +623,32 @@ function steps(n){
   }
 }
 
+// Solution 2
 
+function recStep(n,row=0,stair=""){
+
+if(n === row){
+  return
+}
+
+// It is end of the row
+if(n === stair.length){
+  console.log(stair)
+  // Here we again calling the func with row = 1 , stair =""
+  return recStep(n, row + 1)
+}
+
+// Last base condition
+
+if(stair.length <= row){
+  stair += "#"
+}else{
+  stair += " "
+}
+
+return recStep(n,row,stair)
+
+}
 
 // Question - 11
 
