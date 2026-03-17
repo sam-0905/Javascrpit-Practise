@@ -754,3 +754,12 @@ function vowels(str){
   }
   return count
 }
+
+
+// Soluiton 2 
+
+function matchVowels(str){
+
+  const matches = str.match(/[aeiou]/gi);
+  return matches ? matches.length : 0
+}
