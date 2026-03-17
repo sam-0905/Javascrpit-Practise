@@ -739,7 +739,7 @@ used in a string.  Vowels are the characters 'a', 'e'
   vowels('Why?') --> 0
 */ 
 
-
+// Solution 1
 function vowels(str){
 
   let count = 1;
