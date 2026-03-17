@@ -724,7 +724,7 @@ recPyramid(3)
 
 
 
-// Question - 11
+// Question - 12
 
 // Vowels
 
@@ -738,3 +738,19 @@ used in a string.  Vowels are the characters 'a', 'e'
   vowels('Why do you ask?') --> 4
   vowels('Why?') --> 0
 */ 
+
+
+function vowels(str){
+
+  let count = 1;
+  const checker = "aeiou" 
+  // --- includes() also works in array
+  // const checkerArr = ["a","e","i","o","u"]
+
+  for(let char of str.toLowerCase()){
+    if(checker.includes(char)){
+      count ++
+    }
+  }
+  return count
+}
