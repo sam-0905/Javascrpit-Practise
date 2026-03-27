@@ -450,23 +450,23 @@ function chunk2(array,size){
 // Solution 1.1
 
 function chunk(array, size) {
-  const result = [];
+  const chunked = [];
 
   for (let item of array) {
     // Look at the very last sub-array we created
-    const lastChunk = result[result.length - 1];
+    const lastChunk = chunked[chunked.length - 1];
 
     if (!lastChunk || lastChunk.length === size) {
       // If no chunk exists OR if the last one is full:
       // Start a new chunk with the current item
-      result.push([item]);
+      chunked.push([item]);
     } else {
       // Otherwise, there's still room! Add it to the last chunk.
       lastChunk.push(item);
     }
   }
 
-  return result;
+  return chunked;
 }
 
 
