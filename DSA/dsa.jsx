@@ -774,3 +774,16 @@ function matchVowels(str){
   const matches = str.match(/[aeiou]/gi);
   return matches ? matches.length : 0
 }
+
+// Question - 13
+
+// factorial
+
+/*
+--- Directions
+“Write a function to calculate the factorial of a given number n.”
+
+The factorial of a number n (written as n!) is the product of all positive integers from 1 to n.
+*/ 
+
+
