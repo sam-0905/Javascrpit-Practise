@@ -784,6 +784,13 @@ function matchVowels(str){
 “Write a function to calculate the factorial of a given number n.”
 
 The factorial of a number n (written as n!) is the product of all positive integers from 1 to n.
+5! = 5 × 4 × 3 × 2 × 1 = 120
 */ 
 
-
+// recursive  solution
+function factorial(n){
+  if(n===0 || n===1 ){
+    return 1
+  }
+  return n * factorial(n-1);
+}
