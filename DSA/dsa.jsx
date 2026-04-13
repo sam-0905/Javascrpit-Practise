@@ -372,7 +372,7 @@ function firstNonRepeating(str){
     charMap[char] = charMap[char] + 1 || 1 
   }
   
-  for(let char of str){
+  for(let char in str){
     if(charMap[char] = 1){
       return char
     }
