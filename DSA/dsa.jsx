@@ -785,6 +785,9 @@ function matchVowels(str){
 
 The factorial of a number n (written as n!) is the product of all positive integers from 1 to n.
 5! = 5 × 4 × 3 × 2 × 1 = 120
+
+0! = 1
+1! = 1
 */ 
 
 // recursive  solution
