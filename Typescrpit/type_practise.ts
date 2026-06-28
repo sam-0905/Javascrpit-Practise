@@ -60,6 +60,12 @@ function subscribe2(message : string): string{
 let nullVal: null = null;
 let undefinedVal : undefined = undefined;
 
+// --------------------------------------------------------------------------
+// Type inference
+
+let inferredString = "Hello World"; // TypeScript infers the type as string
+inferredString = "New String"; // Valid
+// inferredString = 42; // Error: Type 'number' is not assignable to type 'string'  
 
 // --------------------------------------------------------------------------
 // function
@@ -118,6 +124,7 @@ interface user1{
     name: string;
     age : number;
     email?: string;   // Optional entry
+    readonly id : number;  // Readonly entry
 
 }
 
@@ -126,5 +133,8 @@ interface user1{
 let user1 : {name : string; age : number} = {
     name : "allan",
     age : 25,
-    email : "abcd@gmail.com"
+    email : "abcd@gmail.com",
+    id : 1,
 }
+
+
