@@ -14,7 +14,7 @@ let data : [number,string] = [2,"Indian Bank"]
 
 // Multiple numbers and multiple strings in a fixed order
 let data1: [number, number, string, string] = [10, 20, "X", "Y"];
-
+ 
 // REST - A single string followed by multiple numbers 
 let values: [string, ...number[]] = ["Coordinates", 1, 2, 3, 4, 5];
 
@@ -112,7 +112,7 @@ calculate = add;   // It will take predefined function
 
 // Object interface 
 
-// Object type annotation
+// Object type annotation without interface
 
 let user : {name : string; age : number} = {
     name : "allan",
@@ -123,14 +123,15 @@ let user : {name : string; age : number} = {
 interface user1{
     name: string;
     age : number;
-    email?: string;   // Optional entry
+    email : string;
+    // email?: string;   // Optional entry
     readonly id : number;  // Readonly entry
 
 }
 
 // Object type annotation
 
-let user1 : {name : string; age : number} = {
+let userObj : user1 = {
     name : "allan",
     age : 25,
     email : "abcd@gmail.com",
