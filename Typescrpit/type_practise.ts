@@ -139,3 +139,117 @@ let userObj : user1 = {
 }
 
 
+// Interface methods
+interface Product{
+    name: string;   
+    price: number;
+    getDiscountedPrice(discount: number): number;
+}
+
+let laptop : Product = {
+    name: "Dell XPS 13",
+    price: 1000,
+    getDiscountedPrice(discount: number): number {
+        return this.price - discount;
+    }
+}
+// --------------
+
+// Type alias
+
+type Point = {
+    x: number;
+    y: number;
+}
+
+let point: Point = {
+    x: 10,
+    y: 20,
+}
+
+// Type alias for primitives
+
+type ID = string | number;
+
+let userId: ID = "abc123";
+let productId: ID = 12345;
+
+
+// ------------------------
+
+//  Types vs Interfaces
+
+/** Interfaces are generally used for defining the shape of objects, while types can be used for a wider range of type definitions, including primitives, unions, and intersections. 
+ * Interfaces can be extended and implemented, while types cannot.*/ 
+
+interface Animal {
+    name : string;
+    makeSound(): void;
+}
+
+interface Dog extends Animal {
+    breed: string;
+}
+
+let myDog: Dog = {
+    name: "Buddy",
+    breed: "Golden Retriever", 
+    makeSound() {
+        console.log("Woof!");
+    }
+}
+
+// Interface can be merged, while types cannot. This means that if you declare an interface with the same name multiple times, TypeScript will merge them into a single interface.
+
+interface Person {
+    name: string;
+}   
+
+interface Person {
+    age: number;
+}
+
+let person: Person = {
+    name: "Alice",
+    age: 30,
+}
+
+// use interface for objects and types alias for union / intersection
+
+interface Car {
+    make: string;
+    model: string;
+}
+
+type UserID = string | number;
+
+
+// _________________________________
+
+// Union types (OR)
+
+type SomeValue = string | number | boolean;
+
+// Intersection Types (And)
+
+interface Address {
+    number: number;
+    street: string;
+    city: string;
+}
+
+
+interface Contact {
+    email: string;
+    phone: string;
+}
+
+type UserDetails = Address & Contact; // Intersection type
+
+let userDetails: UserDetails = {
+    number: 123,
+    street: "Main St",
+    city: "New York",
+    email: "xyz@gmail.com",
+    phone: "123-456-7890"
+}
