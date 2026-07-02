@@ -253,3 +253,67 @@ let userDetails: UserDetails = {
     email: "xyz@gmail.com",
     phone: "123-456-7890"
 }
+
+
+// __________________
+
+// Literal types
+
+type Direction = "up" | "down" | "left" | "right";
+
+
+// Numeric type
+
+let diceRoll: 1 | 2 | 3 | 4 | 5 | 6;
+
+// combining with other types
+type GamePiece = Direction | "select" | "submit";
+
+// ---
+
+// type assertion and type guards
+
+// Type assertion
+let someValue: unknown = "Hello, TypeScript!";
+let strLength: number = (someValue as string).length; // Here we can able access the string methods and properties because we asserted the type of `someValue` to be a string.
+// or
+let strLength2: number = (<string>someValue).length; // Here we can able access the string methods and properties because we asserted the type of `someValue` to be a string.
+
+// Type guards
+function isString(value: unknown): value is string {
+    return typeof value === "string";
+}
+
+// instanceof type guard
+class Animal {
+    makeSound() {
+        console.log("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    Bark() {
+        console.log("Woof!");
+    }
+
+}
+
+class Cat extends Animal {
+    Meow() {
+        console.log("Meow!");
+    }     
+}
+
+
+function makeAnimalSound(animal: Animal) {
+    if (animal instanceof Dog) {
+        animal.Bark(); // TypeScript knows `animal` is a `Dog`
+    } else if (animal instanceof Cat) {
+        animal.Meow(); // TypeScript knows `animal` is a `Cat`
+    } else {
+        animal.makeSound(); // TypeScript knows `animal` is an `Animal`
+    }
+}
+
+
+// ________________________
