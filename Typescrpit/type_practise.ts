@@ -317,3 +317,100 @@ function makeAnimalSound(animal: Animal) {
 
 
 // ________________________
+
+// class
+
+class PersonClass {
+    private name: string;
+    protected age: number;  
+    public email: string;
+
+    constructor(name: string, age: number, email: string) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+
+
+    // Public method
+    public getName(): string {
+        return this.name;
+    }
+    // Getters and Setters
+    public getAge(): number {
+        return this.age;
+    }
+    public setAge(age: number): void {
+        if (age >= 0) {
+            this.age = age;
+        } else {
+            throw new Error("Age cannot be negative");
+        }
+}
+
+}
+
+
+// ____________________
+
+// Generic in Typescript
+
+function identity<MyType>(arg: MyType): MyType {
+    return arg;
+}   
+// by specifying the type parameter explicitly it will return the same type as the input argument.
+
+let output1 = identity<string>("Hello"); // output1 is of type string
+let output2 = identity<number>(42); // output2 is of type number
+
+
+
+// Generic with array 
+
+function getFirstElement<T>(arr: T[]): T | undefined {
+    return arr[0];
+}
+
+//  If we don't use this <> it will return the type as any, but if we use this <> it will return the same type as the input argument.
+
+let firstElement = getFirstElement(["a", "b", "c"]); // firstElement is of type string | undefined it pick automatically the type of the array elements
+
+// To let TypeScript infer the type of the array elements, we can use the following syntax:
+let firstString = getFirstElement<string>(["a", "b", "c"]); // firstString is of type string
+let firstNumber = getFirstElement<number>([1, 2, 3]); // firstNumber is of type number
+
+
+// Generic with interface
+
+interface KeyValuePair<K, V> {
+    key: K;
+    value: V;
+}
+
+let pair: KeyValuePair<string, number> = {
+    key: "age",
+    value: 30
+};
+
+
+// Generic with class
+
+class GenericClass<T> {
+    private value: T;   
+
+    constructor(value: T) {
+        this.value = value;
+    }
+
+    public getValue(): T {
+        return this.value;
+    }
+
+    private setValue(value: T): void {
+        this.value = value;
+    }
+    genericMethod<U>(arg: U): U {
+        return arg;
+    }
+}
+
