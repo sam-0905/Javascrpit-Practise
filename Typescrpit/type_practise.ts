@@ -414,3 +414,122 @@ class GenericClass<T> {
     }
 }
 
+// Utility Types in TypeScript
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+  createdAt: Date;
+  assignedTo: string;
+}
+
+// Partial - makes all properties optional
+type PartialTodo = Partial<Todo>;
+let updateTodo: PartialTodo = {
+  completed: true,
+};
+
+// Required - makes all properties required
+type RequiredTodo = Required<Todo>;
+
+// Readonly - makes all properties readonly
+type ReadonlyTodo = Readonly<Todo>;
+let myTodo: ReadonlyTodo = {
+  title: "Learn TypeScript",
+  description: "Complete tutorial",
+  completed: false,
+  createdAt: new Date(),
+  assignedTo: "Piyush",
+};
+// myTodo.completed = true; // Error!
+
+// Pick - pick specific properties
+type TodoPreview = Pick<Todo, "title" | "completed">;
+let preview: TodoPreview = {
+  title: "My Todo",
+  completed: false,
+};
+
+// Omit - omit specific properties
+type TodoWithoutDate = Omit<Todo, "createdAt">;
+
+// Record - construct object type with specific keys and value type
+type PageInfo = {
+  title: string;
+  url: string;
+};
+
+type Pages = "home" | "about" | "contact";
+let pages: Record<Pages, PageInfo> = {
+  home: { title: "Home", url: "/" },
+  about: { title: "About", url: "/about" },
+  contact: { title: "Contact", url: "/contact" },
+};
+
+// ReturnType - get return type of function
+function createUser() {
+  return {
+    id: 1,
+    name: "Piyush",
+    email: "piyush@roadsidecoder.com",
+  };
+}
+
+type UserType = ReturnType<typeof createUser>;
+
+
+// Numeric enum
+enum Direction {
+  Up = 1,
+  Down,
+  Left,
+  Right,
+}
+
+// String enum
+enum ResponseStatus {
+  Pending = "PENDING",
+  Approved = "APPROVED",
+  Rejected = "REJECTED",
+}
+
+// Const enum (more performant)
+const enum HttpStatus {
+  OK = 200,
+  BadRequest = 400,
+  Unauthorized = 401,
+  NotFound = 404,
+}
+
+function handleResponse(status: HttpStatus): void {
+  if (status === HttpStatus.OK) {
+    console.log("Success!");
+  }
+}
+
+
+// Promise with TypeScript
+function fetchUser(id: number): Promise<{ id: number; name: string }> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ id, name: "Piyush" });
+    }, 1000);
+  });
+}
+
+// Async/await
+async function getUserData(id: number): Promise<void> {
+  try {
+    const user = await fetchUser(id);
+    console.log(user.name);
+  } catch (error) {
+    console.error("Error fetching user:", error);
+  }
+}
+
+// Generic async function
+async function fetchData<T>(url: string): Promise<T> {
+  const response = await fetch(url);
+  return response.json();
+}
+
