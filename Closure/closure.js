@@ -42,7 +42,7 @@ console.log(z);// It will return the whole function
 z();//a
 
 
-// Example 4  - nested function inside another funcn , +func
+// Example 4  - nested function inside another function , +function  
 
 function l(){
 var b = 380;
