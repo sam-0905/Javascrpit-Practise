@@ -43,7 +43,8 @@ var data = {
 },0)
 
 console.log(data.getStatus()) // 🥑
-console.log(data.getStatus.call(this)) // 😎 // Here bcz this refers to the global object and setTimeout is executed in the global context
+console.log(data.getStatus.call(this)) // 😎 
+// Here bcz this refers to the global object and setTimeout is executed in the global context
 
 
 //Question : 4 - call printAnimals such that it Prints all animals in object
@@ -97,10 +98,10 @@ console.log(Math.min.apply(null,numbers)) // 1
 
 // //Question : 10 - Bound function
 function f (){
-    console.log(this)// window object
+    console.log(this)// Here this refers to window object
 }
 let user = {
-g: f.bind(null),
+g: f.bind(null),  // It return a new function with this bound to null. So when we call user.g(), it will log null.
 }
 user.g()
 
