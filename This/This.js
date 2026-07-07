@@ -21,6 +21,7 @@ const anotherObj = {
 const greetFunctionWithCall = obj.greet;
 greetFunctionWithCall.call(anotherObj); // Output: Hello from Another Object
 
+// _______________________________________________________________
 
 //This
 
@@ -64,3 +65,37 @@ let userName = {
 }
 
 userName.getName(); // Output: "Dinesh is 30 years old."
+
+
+// ____________________________________
+
+// In the example below, the greet method is defined as an arrow function. Arrow functions do not have their own this context; instead, they inherit this from the surrounding lexical scope. In this case, the surrounding scope is the global context, so this refers to the global object (window in browsers, global in Node.js).
+
+const employee = {
+  name: 'Alice',
+  age: 28,
+  greet: () => {
+      console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+}
+
+const getEmployeeDetails = employee.greet;
+getEmployeeDetails(); // Output: "Hello, my name is undefined and I am undefined years old."
+
+
+// In the example below, the greet method is defined as a regular function. Regular functions have their own this context, which is determined by how the function is called. In this case, the greet method is called as a method of the person object, so this refers to the person object.
+
+const person = {  
+  name: 'John',
+  age: 25,
+  greet: function() {
+    setTimeout(() => {
+      console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    }, 1000);
+}
+}
+
+const getPersonDetails = person.greet;
+getPersonDetails(); // Output: "Hello, my name is John and I am 25 years old."
+
+
