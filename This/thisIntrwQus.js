@@ -73,6 +73,128 @@ setTimeout(function() {
   user.logMessage();
 }, 1000); 
 
-// ### Question 5 -What logs to console of the following code snippet?
+
+// ### Question 4 -What logs to console of the following code snippet?
+
+
+const user = { 
+    name: 'Piyush', 
+    greet() { return `Hello, ${this.name}!`}, 
+    farewell: () => { return `Goodbye, ${this.name}!`
+} 
+}; 
+
+console.log(user.greet()); // What is logged? console.log(user.farewell()); // What is logged?
+
+/**
+
+'Hello, Piyush!' and 'Goodbye, undefined!' are logged to console.
+
+When calling `object.greet()`, inside the method `greet()` `this` value equals `object`because `greet` is a regular function. Thus `object.greet()` returns `'Hello,Piyush!'`.
+
+But `farewell()` is an arrow function, so *[this* value inside of an arrow function]*always* equals `this` of the outer scope.
+
+The outer scope of `farewell()` is the global scope, where `this` is the global object. Thus `object.farewell()` actually returns `'Goodbye, ${window.name}!'`, which evaluates to `'Goodbye, undefined!'`.
+ 
+*/ 
+
+
+//  Question 5
+
+/*
+Create an object `calculator` with three methods:
+
+- `read()` prompts for two values and saves them as object properties with names `a` and `b` respectively.
+- `sum()` returns the sum of saved values.
+- `mul()` multiplies saved values and returns the result.
+
+Example :
+*/
+
+
+let calculator = {
+  read() {
+    this.a = +prompt('Enter the first number:', 0);
+    this.b = +prompt('Enter the second number:', 0);
+  },
+    sum() {
+    return this.a + this.b;
+  },
+    mul() {
+    return this.a * this.b;
+  },
+    div() {
+    return this.a / this.b;
+  },
+  sub() {
+    return this.a - this.b;
+  }
+}
+
+calculator.read();
+alert( "Sum=" + calculator.sum() );
+alert( "Mul=" + calculator.mul() );
+alert( "Div=" + calculator.div() );
+alert( "Sub=" + calculator.sub() ); 
+
+
+// ### Question 6
+
+var length = 4; 
+
+function callback() { console.log(this.length);} // What is logged? 
+
+    const object = { 
+        length: 5, 
+        method(callback) { 
+            callback(); 
+        } 
+    }; 
+    
+object.method(callback); 
+
+/*
+
+`4` is logged to console.
+
+`callback()` is called using regular function invocation inside `method()`. Since this value during a regular function invocation equals the global object, `this.length` is evaluated as `window.length` inside `callback()` function.
+
+The first statement `var length = 4`, being in the outermost scope, creates a property `length` on the global object: `window.length` becomes `4`.
+
+Finally, inside the `callback()` function `this.length` evaluates as `window.length` — `4` being logged to console.
+
+*/ 
+
+
+// ### Question 7 -What is the output of the following code ?
+
+var length = 8; 
+function callback() { 
+    console.log(this.length);// What is logged? 
+    } 
+    
+const object = { 
+    length: 5, 
+    method() { 
+        arguments[0]() 
+    } 
+}; 
+
+object.method(callback, 1, 2);
+
+
+/*
+
+`3` is logged to console. 
+
+`obj.method(callback, 1, 2)` is invoked with 3 arguments: `callback`, `1` and `2`. 
+- As result the `arguments` special variable inside `method()` is an array-like object of the following structure:
+{ 0: callback, 1: 1, 2: 2, length: 3 }
+
+*/ 
+
+
+// ### Question-9 Write the implementation of this calc()
+
 
 
