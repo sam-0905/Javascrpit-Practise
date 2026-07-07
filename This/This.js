@@ -25,7 +25,9 @@ greetFunctionWithCall.call(anotherObj); // Output: Hello from Another Object
 
 //This
 
-// This is a special keyword in JavaScript that refers to the context in which a function is called. The value of `this` can change depending on how a function is invoked.
+// In the English language, we use the pronoun ‘this’ to reference something , like a fruits are sweet, this is a pen, this is my house. In JavaScript, we use the keyword ‘this’ to reference the object that is executing the current function.
+
+//This is a special keyword in JavaScript that refers to the context in which a function is called. The value of `this` can change depending on how a function is invoked.
 
 /**
  * 1. Inside a Method (Object Context) 
@@ -99,3 +101,21 @@ const getPersonDetails = person.greet;
 getPersonDetails(); // Output: "Hello, my name is John and I am 25 years old."
 
 
+// Classes in this
+
+// In JavaScript, classes are a way to create objects and define their behavior. The `this` keyword inside a class refers to the instance of the class that is created when the class is instantiated.
+
+class userClass {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+getUserDetails() {
+  console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+}
+
+
+const userInstance = new userClass('Bob', 35);
+userInstance.getUserDetails(); // Output: "Hello, my name is Bob and I am 35 years old."
