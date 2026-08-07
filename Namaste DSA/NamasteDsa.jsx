@@ -23,3 +23,10 @@ function checkIndex(arr, element){
     return -1;
 }
 
+
+
+
+// Solution 2
+function checkIndex2(arr,element){
+ return arr.indexOf(element);
+}
