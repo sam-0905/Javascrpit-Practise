@@ -30,3 +30,23 @@ function checkIndex(arr, element){
 function checkIndex2(arr,element){
  return arr.indexOf(element);
 }
+
+
+/*
+ 
+*/
+
+// Q2 - Write a function that returns the number of negative numbers in an array.
+
+
+
+function IsArrHasNegativeNum(arr){
+let count = 0;
+
+   for(let i =0; i<arr.length;i++){
+     if(arr[i] < 0){
+        count = count + 1;
+     }
+   }  
+   return count;
+}
