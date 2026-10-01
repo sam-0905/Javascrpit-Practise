@@ -74,6 +74,24 @@ console.log(reverse(123)); // 321
 
 
 
+// Reverse string
+
+function reverseString(s) {
+    let len = s.length;
+    let halfLen = Math.floor(len/2)
+
+    for(let i=0; i<halfLen; i++){
+        // swapping
+        // [s[i], s[len-1-i]]- it will find  the last element and second last element
+        let temp = s[i]
+        s[i] = s[len-1-i]
+        s[len-1-i] = temp
+
+        // shortHand 
+        // [s[i], s[len-1-i]][s[i], s[len-1-i]] = [s[len-1-i], s[i]];
+    }
+
+}
 
 
 
