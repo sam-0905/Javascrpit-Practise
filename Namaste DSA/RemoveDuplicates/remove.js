@@ -1,3 +1,4 @@
+// removeDuplicates 
 
 function removeDuplicates(arr){
 
@@ -11,3 +12,21 @@ function removeDuplicates(arr){
     }
     return x + 1
 }
+
+
+// remove Element form an array
+
+
+ function removeElement(arr,val){
+
+    for(let i=0; i<arr.length; i++){
+        // Shift elem to the left if it is not equal to val 
+        if(arr[i] != val ){
+            arr[x] = arr[i]
+            x = x+1
+        }
+    }
+
+    return x 
+
+ }
