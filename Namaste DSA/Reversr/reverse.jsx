@@ -1,3 +1,5 @@
+// Reverse integer
+
 // V1
 function checkReverse(n){
 
@@ -69,3 +71,9 @@ var reverse = function(x) {
 };
 
 console.log(reverse(123)); // 321
+
+
+
+
+
+
